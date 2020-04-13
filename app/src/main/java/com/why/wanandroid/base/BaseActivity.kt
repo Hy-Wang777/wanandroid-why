@@ -23,6 +23,18 @@ abstract class BaseActivity : AppCompatActivity() {
                 EventBus.getDefault().isRegistered(this)
             }
         }
+
+
+        initView()
+        initData()
+    }
+
+   open fun initData() {
+
+    }
+
+  open fun initView() {
+
     }
 
     override fun onDestroy() {
@@ -34,7 +46,7 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 
-    fun isRegisteredEventBus(): Boolean = false
+   open fun isRegisteredEventBus(): Boolean = false
 
     abstract fun getContentViewId(): Int
 }
