@@ -2,4 +2,13 @@
 <resources>
     <color name="standardWhite">#FFFFFF</color>
     <color name="standardBlack">#000000</color>
+
+    <color name="colorBlack2d">#2D2D2D</color>
+    <color name="colorBlack4">#444444</color>
+    <color name="colorGray9B">#9B9B9B</color>
+    <color name="colorGrayCC">#CCCCCC</color>
+
+    <color name="colorOrange3B">#EC543B</color>
+    <color name="colorGrayFA">#FAFAFA</color>
+
 </resources>

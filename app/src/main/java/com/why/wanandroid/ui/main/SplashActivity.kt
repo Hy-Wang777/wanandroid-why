@@ -1,4 +1,4 @@
-package com.why.wanandroid.ui
+package com.why.wanandroid.ui.main
 
 import com.why.wanandroid.R
 import com.why.wanandroid.base.BaseActivity

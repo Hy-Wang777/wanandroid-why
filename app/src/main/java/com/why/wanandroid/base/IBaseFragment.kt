@@ -11,7 +11,7 @@ import android.os.Bundle
 
 abstract class IBaseFragment<T : IBasePresenter> : BaseFragment(), IBaseView<T> {
 
-    val presenter : T? = null
+    var presenter : T? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

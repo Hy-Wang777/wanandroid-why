@@ -45,12 +45,12 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
-    fun isRegisteredEventBus(): Boolean = false
+   open fun isRegisteredEventBus(): Boolean = false
 
-    fun initView(view:View){
+   open fun initView(view:View){
 
     }
-    fun initData(){
+   open fun initData(){
 
     }
 

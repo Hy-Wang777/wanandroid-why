@@ -13,5 +13,7 @@ import com.why.wanandroid.base.BaseFragment
 class MyFragment :BaseFragment(){
     override fun getLayoutRes(): Int = R.layout.frgament_my
 
+    override fun initData() {
+    }
 
 }
