@@ -1,9 +1,9 @@
-package com.why.wanandroid.network.api
+package com.why.wanandroid.network
 
 import com.why.wanandroid.network.CommonResponse
-import com.why.wanandroid.network.model.HomeBannerData
-import com.why.wanandroid.network.model.HomeListData
-import com.why.wanandroid.network.model.HomeTopData
+import com.why.wanandroid.model.HomeBannerData
+import com.why.wanandroid.model.HomeListData
+import com.why.wanandroid.model.HomeTopData
 import retrofit2.http.GET
 import retrofit2.http.Path
 

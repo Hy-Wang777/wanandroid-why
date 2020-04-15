@@ -1,13 +1,20 @@
 package com.why.wanandroid.ui.main
 
+import android.view.KeyEvent
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.why.wanandroid.R
 import com.why.wanandroid.base.BaseActivity
+import com.why.wanandroid.base.FragmentControl
 import com.why.wanandroid.ui.home.HomeFragment
 import com.why.wanandroid.ui.my.MyFragment
 import com.why.wanandroid.ui.project.ProjectFragment
 import com.why.wanandroid.ui.system.SystemFragment
+import com.why.wanandroid.utils.Constants
 import kotlinx.android.synthetic.main.activity_main.*
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
+import java.util.*
 
 /******************************************
  * 类描述：
@@ -17,11 +24,16 @@ import kotlinx.android.synthetic.main.activity_main.*
  ******************************************/
 class MainActivity : BaseActivity() {
 
-
     private val fragments = arrayListOf<Fragment>()
     private var lastFragment = 0
-    override fun getContentViewId(): Int = R.layout.activity_main
 
+    companion object {
+        val instance = MainActivity()
+    }
+
+    override fun isRegisteredEventBus(): Boolean = true
+
+    override fun getContentViewId(): Int = R.layout.activity_main
 
     override fun initView() {
 
@@ -78,5 +90,28 @@ class MainActivity : BaseActivity() {
         }
 
         ta.show(fragments[index]).commitAllowingStateLoss()
+    }
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onEvent(params: HashMap<String, String>) {
+        if (params.containsKey("action")) {
+            when (params["action"]) {
+                Constants.ACTION_HIDE_MAIN_INDEX -> {
+                    nav_view.visibility = View.GONE
+                }
+
+                Constants.ACTION_VISIBLE_MAIN_INDEX -> {
+                    nav_view.visibility = View.VISIBLE
+                }
+            }
+        }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (FragmentControl.onKeyDown(keyCode, event)) {
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }

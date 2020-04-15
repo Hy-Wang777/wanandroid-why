@@ -1,4 +1,4 @@
-package com.why.wanandroid.network.gson
+package com.why.wanandroid.network
 
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer

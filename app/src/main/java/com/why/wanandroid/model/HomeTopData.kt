@@ -1,23 +1,13 @@
-package com.why.wanandroid.network.model
+package com.why.wanandroid.model
 
 /******************************************
  * 类描述：
  *
  * @author: why
- * @time: 2020/4/14 5:40 PM
+ * @time: 2020/4/14 5:24 PM
  ******************************************/
-
-data class HomeListData(
-    val curPage: Int,
-    val datas: List<HomeList>,
-    val offset: Int,
-    val over: Boolean,
-    val pageCount: Int,
-    val size: Int,
-    val total: Int
-)
-
-data class HomeList(
+ 
+data class HomeTopData(
     val apkLink: String,
     val audit: Int,
     val author: String,
@@ -43,15 +33,10 @@ data class HomeList(
     val shareUser: String,
     val superChapterId: Int,
     val superChapterName: String,
-    val tags: List<Tag>,
+    val tags: List<Any>,
     val title: String,
     val type: Int,
     val userId: Int,
     val visible: Int,
     val zan: Int
-)
-
-data class Tag(
-    val name: String,
-    val url: String
 )

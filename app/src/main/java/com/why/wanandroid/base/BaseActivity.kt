@@ -17,23 +17,23 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(getContentViewId())
         if (isRegisteredEventBus()) {
             if (!EventBus.getDefault().isRegistered(this)) {
-                EventBus.getDefault().isRegistered(this)
+                EventBus.getDefault().register(this)
             }
         }
 
+        setContentView(getContentViewId())
 
         initView()
         initData()
     }
 
-   open fun initData() {
+    open fun initData() {
 
     }
 
-  open fun initView() {
+    open fun initView() {
 
     }
 
@@ -46,7 +46,12 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 
-   open fun isRegisteredEventBus(): Boolean = false
+    override fun onBackPressed() {
+
+    }
+
+
+    open fun isRegisteredEventBus(): Boolean = false
 
     abstract fun getContentViewId(): Int
 }

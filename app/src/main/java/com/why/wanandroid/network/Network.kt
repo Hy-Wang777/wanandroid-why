@@ -2,9 +2,6 @@ package com.why.wanandroid.network
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.why.wanandroid.network.api.Apis
-import com.why.wanandroid.network.gson.IntegerDefaultAdapter
-import com.why.wanandroid.network.gson.StringDefaultAdapter
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

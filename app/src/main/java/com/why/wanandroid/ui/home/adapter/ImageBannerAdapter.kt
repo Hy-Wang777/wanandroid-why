@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.why.wanandroid.network.model.HomeBannerData
+import com.why.wanandroid.model.HomeBannerData
 import com.youth.banner.adapter.BannerAdapter
 
 

@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <application
         android:name=".MyApplication"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +29,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppThemeNotFullscreen" />
+
     </application>
 
 </manifest>

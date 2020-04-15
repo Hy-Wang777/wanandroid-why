@@ -1,4 +1,4 @@
-package com.why.wanandroid.network.model
+package com.why.wanandroid.model
 
 /******************************************
  * 类描述：

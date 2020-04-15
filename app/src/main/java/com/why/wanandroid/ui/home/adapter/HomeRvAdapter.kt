@@ -3,7 +3,7 @@ package com.why.wanandroid.ui.home.adapter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.why.wanandroid.R
-import com.why.wanandroid.network.model.HomeList
+import com.why.wanandroid.model.HomeList
 import com.why.wanandroid.utils.DateUtils
 
 /******************************************
@@ -14,6 +14,10 @@ import com.why.wanandroid.utils.DateUtils
  ******************************************/
 
 class HomeRvAdapter(private val layout: Int) : BaseQuickAdapter<HomeList, BaseViewHolder>(layout) {
+
+    init {
+        addChildClickViewIds(R.id.root_item_home_list)
+    }
 
     override fun convert(holder: BaseViewHolder, item: HomeList) {
 

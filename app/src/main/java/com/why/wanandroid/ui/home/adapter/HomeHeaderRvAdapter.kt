@@ -3,7 +3,7 @@ package com.why.wanandroid.ui.home.adapter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.why.wanandroid.R
-import com.why.wanandroid.network.model.HomeTopData
+import com.why.wanandroid.model.HomeTopData
 import com.why.wanandroid.utils.DateUtils
 
 /******************************************
