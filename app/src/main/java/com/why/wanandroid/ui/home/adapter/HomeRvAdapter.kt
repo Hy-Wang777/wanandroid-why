@@ -1,5 +1,6 @@
 package com.why.wanandroid.ui.home.adapter
 
+import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.why.wanandroid.R
@@ -25,6 +26,12 @@ class HomeRvAdapter(private val layout: Int) : BaseQuickAdapter<HomeList, BaseVi
         holder.setText(R.id.tv_item_user_name, if (item.shareUser.isEmpty()) item.author else item.shareUser)
         holder.setText(R.id.tv_item_time, DateUtils.getFormatDate(item.publishTime, "yyyy-MM-dd HH:mm"))
         holder.setText(R.id.tv_item_tag, item.superChapterName)
+
+       holder.getView<TextView>(R.id.tv_item_title).setOnClickListener {
+           clickImageListener(item.link)
+       }
     }
 
+
+    lateinit var clickImageListener: (url: String) -> Unit
 }

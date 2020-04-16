@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.view.ViewParent
 import android.webkit.WebSettings
 import com.why.wanandroid.R
+import com.why.wanandroid.closeFragment
 import kotlinx.android.synthetic.main.fragment_base_web.*
 import kotlinx.android.synthetic.main.layout_title.*
 
@@ -25,6 +26,8 @@ open class BaseWebFragment : BaseFragment() {
         image_title_back.setOnClickListener {
             closeFragment()
         }
+
+        text_title_name.text = "文章详情"
         initWebSettings()
     }
 

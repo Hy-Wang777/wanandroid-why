@@ -30,15 +30,25 @@ class ImageBannerAdapter(list: List<HomeBannerData>) : BannerAdapter<HomeBannerD
 
     override fun onBindView(holder: BannerViewHolder?, data: HomeBannerData?, position: Int, size: Int) {
 
-        holder?.let {
-            Glide.with(it.imageVIew.context).load(data?.imagePath).into(it.imageVIew)
-        }
+        holder?.let { item ->
+            data?.let { data ->
+                Glide.with(item.imageVIew.context).load(data.imagePath).into(item.imageVIew)
+                if (data.url.isNotEmpty()) {
+                    item.imageVIew.setOnClickListener {
+                        clickImageListener(data.url)
+                    }
 
+                }
+            }
+        }
     }
+
 
     class BannerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageVIew: ImageView = view as ImageView
 
     }
+
+    lateinit var clickImageListener: (url: String) -> Unit
 
 }

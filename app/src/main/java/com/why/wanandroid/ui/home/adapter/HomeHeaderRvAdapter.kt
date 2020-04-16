@@ -15,6 +15,10 @@ import com.why.wanandroid.utils.DateUtils
 
 class HomeHeaderRvAdapter(private val layout: Int) : BaseQuickAdapter<HomeTopData, BaseViewHolder>(layout) {
 
+    init {
+        addChildClickViewIds(R.id.root_item_home_list)
+    }
+
     override fun convert(holder: BaseViewHolder, item: HomeTopData) {
 
         holder.setText(R.id.tv_item_title, item.title)

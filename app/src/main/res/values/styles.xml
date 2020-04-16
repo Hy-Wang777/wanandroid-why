@@ -9,7 +9,7 @@
     </style>
 
     <style name="AppThemeNotFullscreen.Launcher" parent="AppThemeNotFullscreen">
-        <item name="android:windowBackground">@color/standardWhite</item>
+<!--        <item name="android:windowBackground">@color/standardWhite</item>-->
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>

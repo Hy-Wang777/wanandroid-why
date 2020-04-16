@@ -10,13 +10,13 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
 import com.why.wanandroid.R
-import com.why.wanandroid.base.FragmentControl
 import com.why.wanandroid.base.IBaseFragment
 import com.why.wanandroid.base.WebViewFragment
 import com.why.wanandroid.model.HomeBannerData
 import com.why.wanandroid.model.HomeList
 import com.why.wanandroid.model.HomeListData
 import com.why.wanandroid.model.HomeTopData
+import com.why.wanandroid.showFragment
 import com.why.wanandroid.ui.home.adapter.HomeHeaderRvAdapter
 import com.why.wanandroid.ui.home.adapter.HomeRvAdapter
 import com.why.wanandroid.ui.home.adapter.ImageBannerAdapter
@@ -57,7 +57,25 @@ class HomeFragment : IBaseFragment<HomeController.HomePresenter>(), HomeControll
                         bundle.putString("url", home.link)
                         instance.arguments = bundle
 
-                        FragmentControl.showFragment(parentFragmentManager,instance, WebViewFragment::class.java.name)
+                        showFragment(instance, WebViewFragment::class.java.name)
+
+                    }
+                    else -> {
+                    }
+                }
+            }
+        }
+
+        homeHeaderAdapter.setOnItemChildClickListener { adapter, view, position ->
+            adapter.getItem(position)?.let {
+                val home = it as HomeTopData
+                when (view.id) {
+                    R.id.root_item_home_list -> {
+                        val instance = WebViewFragment()
+                        val bundle = Bundle()
+                        bundle.putString("url", home.link)
+                        instance.arguments = bundle
+                        showFragment(instance, WebViewFragment::class.java.name)
                     }
                     else -> {
                     }
@@ -123,17 +141,24 @@ class HomeFragment : IBaseFragment<HomeController.HomePresenter>(), HomeControll
 
         val bannerView = headerView.findViewById<Banner<*, *>>(R.id.banner_home_header)
         val recycler = headerView.findViewById<RecyclerView>(R.id.rv_home_header_hot)
-
         banner?.let {
             bannerView.apply {
-                adapter = ImageBannerAdapter(banner)
+                val bannerAdapter = ImageBannerAdapter(banner)
+                adapter = bannerAdapter
                 indicator = CircleIndicator(context)
                 indicatorConfig.normalColor = resources.getColor(R.color.colorGray9B)
-                indicatorConfig.selectedColor = resources.getColor(R.color.colorBlack2d)
+                indicatorConfig.selectedColor = resources.getColor(R.color.colorMain)
 
+                bannerAdapter.clickImageListener = {
+                    val instance = WebViewFragment()
+                    val bundle = Bundle()
+                    bundle.putString("url", it)
+                    instance.arguments = bundle
+                    showFragment(instance, WebViewFragment::class.java.name)
+                }
             }
-
         }
+
 
         recycler.apply {
             layoutManager = LinearLayoutManager(context)

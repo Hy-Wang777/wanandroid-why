@@ -3,16 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/standardBlack">
+    android:background="#FFF5F5F5">
 
 
     <TextView
         android:id="@+id/tv_splash_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
         android:text="Wanandroid"
-        android:textColor="@color/standardWhite"
-        android:textSize="14sp"
+        android:textColor="@color/colorMain"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -23,8 +24,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:fontFamily="sans-serif-medium"
         android:text="- by Why"
-        android:textColor="@color/standardWhite"
+        android:textColor="@color/colorMain"
         android:textSize="14sp"
         app:layout_constraintLeft_toRightOf="@id/tv_splash_content"
         app:layout_constraintTop_toBottomOf="@id/tv_splash_content" />
@@ -33,9 +35,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/pic_splash"
+        android:src="@drawable/icon_splash"
         app:layout_constraintBottom_toTopOf="@id/tv_splash_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
-
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

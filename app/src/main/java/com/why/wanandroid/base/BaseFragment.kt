@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import org.greenrobot.eventbus.EventBus
 
 /******************************************
@@ -53,19 +54,9 @@ abstract class BaseFragment : Fragment() {
 
     abstract fun getLayoutRes(): Int
 
-//    //默认返回false
-//    open fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-//        closeFragment()
-//        return true
-//    }
-
     //默认返回false
     open fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         return false
-    }
-
-    open fun closeFragment() {
-        FragmentControl.closeFragment()
     }
 
 }
